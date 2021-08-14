@@ -20,6 +20,13 @@
       "tipoConta": "Poupança",
       "valor": 500,
       "aberto": true
+    },
+    {
+      "id": 4,
+      "banco": "Pagbank",
+      "tipoConta": "Corrente",
+      "valor": 765,
+      "aberto": true
     }
   ]
 }

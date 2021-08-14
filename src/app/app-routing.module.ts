@@ -20,18 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/carteira/carteira.module').then( m => m.CarteiraPageModule)
   },
   {
-    path: 'modal/:id',
-    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
-  },
-  {
-    path: 'depositar',
-    loadChildren: () => import('./pages/depositar/depositar.module').then( m => m.DepositarPageModule)
-  },
-  {
-    path: 'sacar',
-    loadChildren: () => import('./pages/sacar/sacar.module').then( m => m.SacarPageModule)
-  },
-  {
     path: 'create',
     loadChildren: () => import('./pages/create/create.module').then( m => m.CreatePageModule)
   },

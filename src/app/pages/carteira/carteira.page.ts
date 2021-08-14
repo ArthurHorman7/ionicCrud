@@ -2,7 +2,6 @@ import { CreatePage } from './../create/create.page';
 import { ContasService } from './../../contas.services';
 import { Conta } from './../../components/shared/contas.model';
 import { HttpClient } from '@angular/common/http';
-import { ModalPage } from './../modal/modal.page';
 import { Component, OnChanges, OnInit, Input } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 
@@ -22,10 +21,6 @@ export class CarteiraPage implements OnInit, OnChanges  {
   public contas: Conta[]
   public conta: Conta
   
-
-  // id: number = 5
-  // deleteId: number
-
 
   constructor(
     public alertController: AlertController, 
@@ -49,7 +44,6 @@ export class CarteiraPage implements OnInit, OnChanges  {
             this.total = contas.reduce( function(a, b){
               return a + b['valor'];
           }, 0);
-          //console.log(this.total);
         })
         .catch( ( param: any ) => { 
       })
@@ -63,11 +57,9 @@ export class CarteiraPage implements OnInit, OnChanges  {
       this.http.get(`http://localhost:3000/contas`)
                  .subscribe(resultado => resultado);
  
-      //console.log('Valores não mostrando')
       this.vendoValor = false
       this.iconeOlho = 'eye-off-outline'
     }else {
-      //console.log('Valores mostrando')
       this.vendoValor = true
       this.iconeOlho = 'eye-outline'
     }
@@ -82,37 +74,5 @@ export class CarteiraPage implements OnInit, OnChanges  {
       });
       return await modal.present();
     }
-
-  // async updateconta(id) {
-  //   const modal = await this.modalController.create(
-  //   {
-  //     component: ModalPage,
-  //     cssClass: 'my-custom-class',
-  //     backdropDismiss: true,
-  //     id:id
-  //   }
-  //   );
-  //   return await modal.present();
-  // }
-
-//   deleteconta() {
-//     // this.contasService.getOfertas()
-//     // .then(( contas: Conta[] ) => { 
-//     //     this.contas = contas
-//     //     console.log(this.contas)
-      
-//     setTimeout(() => 
-//     {
-//         window.location.reload();
-//     },
-//     500);
-
-//     this.contasService.deletarCompra(this.id)
-//     .subscribe((num: number) => {
-//       this.deleteId = num
-//       console.log(this.deleteId)
-//     })
-// // });
-//   }
 
 }

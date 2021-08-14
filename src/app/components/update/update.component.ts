@@ -1,5 +1,3 @@
-import { SacarPage } from './../../pages/sacar/sacar.page';
-import { DepositarPage } from './../../pages/depositar/depositar.page';
 import { AlertController, ModalController, NavParams } from '@ionic/angular';
 import { Conta } from './../shared/contas.model';
 import { ContasService } from './../../contas.services';

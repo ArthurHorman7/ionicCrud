@@ -70,7 +70,7 @@ export class CreatePage implements OnInit {
               //this.router.navigate(['/']);
               this.modalController.dismiss();
               window.location.reload();
-              alert("conta criada com sucesso!")
+              //alert("conta criada com sucesso!")
           },
           500);
 

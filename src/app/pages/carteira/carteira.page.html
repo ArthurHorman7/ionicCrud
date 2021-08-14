@@ -1,0 +1,69 @@
+<app-header titulo="carteira"></app-header>
+
+<ion-content>
+  
+  <!-- {{valor | currency : 'R$' }} -->
+  <ion-list class="ion-margin">
+    <ion-text>Minha Carteira</ion-text>
+    <ion-item slot="start">
+      <ion-icon name="wallet-outline" class="icon-carteira"></ion-icon> &nbsp;
+      <ion-label *ngIf="vendoValor">{{total | currency : 'R$ '}}</ion-label>
+      <ion-button (click)="verValores()" slot="end"><ion-icon name="{{iconeOlho}}"></ion-icon></ion-button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list class="ion-margin">
+    <div class="contas">
+      <ion-text>Minhas Contas</ion-text>
+      <ion-icon name="add-circle" class="icon-add ion-margin-start" (click)="criarconta()"></ion-icon>
+    </div>
+
+    
+    <ion-item *ngFor="let conta of contas">
+      <ion-label>Conta {{conta.id}} <br> <b *ngIf="vendoValor">{{conta.valor | currency : 'R$ ' }}</b> <p>{{conta.banco}} / {{conta.tipoConta}}</p> </ion-label>
+      <a routerLink="update/{{conta.id}}"><ion-icon name="create" class="icon-update ion-margin-start ion-margin-end"></ion-icon></a>
+      <a routerLink="delete/{{conta.id}}"><ion-icon name="trash" class="icon-delete"></ion-icon></a>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>Conta 2 R$ 200,00 <br> <p>Itau / Corrente</p> </ion-label>
+      <ion-icon name="create" class="icon-update ion-margin-start ion-margin-end"></ion-icon>
+      <ion-icon name="trash" class="icon-delete"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Conta 3 R$ 70,00 <br> <p>Santander / Corrente</p> </ion-label>
+      <ion-icon name="create" class="icon-update ion-margin-start ion-margin-end"></ion-icon>
+      <ion-icon name="trash" class="icon-delete"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Conta 4 R$ 300,00 <br> <p>Caixa / Poupança</p> </ion-label>
+      <ion-icon name="create" class="icon-update ion-margin-start ion-margin-end"></ion-icon>
+      <ion-icon name="trash" class="icon-delete"></ion-icon>
+    </ion-item> -->
+  </ion-list>
+
+
+
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" edge slot="fixed" class="ion-margin-bottom ion-margin-end">
+    <ion-fab-button class="ion-margin-bottom">
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <a href="https://www.linkedin.com/in/arthur-horman-925b1a108/" target="_blank" rel="noopener noreferrer">
+        <ion-fab-button><ion-icon name="logo-linkedin"></ion-icon></ion-fab-button>      
+      </a>
+      <a href="https://www.instagram.com/arthurhorman/" target="_blank" rel="noopener noreferrer">
+        <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+      </a>
+      <a href="https://github.com/ArthurHorman7" target="_blank" rel="noopener noreferrer">
+        <ion-fab-button><ion-icon name="logo-github"></ion-icon></ion-fab-button>
+      </a>
+    </ion-fab-list>
+  </ion-fab>
+
+  <br><br>
+
+
+</ion-content>

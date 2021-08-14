@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start" (click)="closeModal()" fill="outline">
+        <ion-icon name="return-down-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Operar Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <p>Conta {{id}}</p>
+  </ion-item>
+
+<!-- 
+  <ion-item>
+    <ion-label>Banco</ion-label>
+    <ion-select value="nenhum" okText="Okay" cancelText="Dismiss" (ionChange)="bancoChanged($event)">
+      <ion-select-option value="Banco do Brasil">Banco do Brasil</ion-select-option>
+      <ion-select-option value="Bradesco">Bradesco</ion-select-option>
+      <ion-select-option value="Caixa">Caixa</ion-select-option>
+      <ion-select-option value="Santander">Santander</ion-select-option>
+      <ion-select-option value="Inter">Inter</ion-select-option>
+      <ion-select-option value="Nubank">Nubank</ion-select-option>
+      <ion-select-option value="Outro">Outro</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <br>
+
+<ion-label class="ion-margin">Tipo de Conta</ion-label>
+<ion-item>
+  <ion-segment (ionChange)="tipoChanged($event)">
+    <ion-segment-button value="Corrente">
+      <ion-label>Corrente</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Poupança">
+      <ion-label>Poupança</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-item>
+ -->
+
+<br>
+<!-- <ion-label class="ion-margin">Operar</ion-label>
+<br><br> -->
+
+  <ion-button expand="block" (click)="Depositar()">Depositar</ion-button><br>
+
+  <ion-button expand="block" fill="outline" (click)="Sacar()">Sacar</ion-button>
+
+
+
+<!-- <ion-button expand="block">Confirmar</ion-button> -->
+
+</ion-content>

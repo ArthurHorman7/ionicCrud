@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-button slot="start" (click)="voltar()" fill="outline">
+      <ion-icon name="return-down-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-capitalize">Sacar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="myconta">
+    <ion-list class="ion-margin-top">
+      <ion-label class="ion-margin">Valor na conta {{id}}</ion-label>
+      <ion-item slot="start">
+        <ion-icon name="cash-outline" class="icon-carteira"></ion-icon> &nbsp;
+        <ion-label>{{myconta.valor | currency:'BRL'}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-item class="ion-margin">
+      <ion-label position="floating">Valor de Saque</ion-label>
+      <ion-input type="number" (ionChange)="valorChanged($event)"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="saque()">Sacar</ion-button>
+
+  </div>
+</ion-content>

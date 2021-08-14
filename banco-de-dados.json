@@ -1,0 +1,25 @@
+{
+  "contas": [
+    {
+      "id": 1,
+      "banco": "Bradesco",
+      "tipoConta": "Poupança",
+      "valor": 130.8,
+      "aberto": true
+    },
+    {
+      "id": 2,
+      "banco": "Banco do Brasil",
+      "tipoConta": "Corrente",
+      "valor": 36,
+      "aberto": true
+    },
+    {
+      "id": 3,
+      "banco": "Inter",
+      "tipoConta": "Poupança",
+      "valor": 500,
+      "aberto": true
+    }
+  ]
+}

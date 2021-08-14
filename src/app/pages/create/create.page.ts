@@ -39,12 +39,6 @@ export class CreatePage implements OnInit {
     this.conta.banco = ev.detail.value
   }
   tipoChanged(ev: any) {
-    //console.log('Segment changed', ev);
-    //console.log(ev.detail.value);
-
-    // if(ev.detail.value == "Corrente" || ev.detail.value == "Poupança") {this.conta = ev.detail.value}
-    // else {this.banco = ev.detail.value}
-
     this.conta.tipoConta = ev.detail.value
   }
 
@@ -55,28 +49,21 @@ export class CreatePage implements OnInit {
   confirmCreate() {
     if(this.conta.tipoConta == '' || this.conta.banco == ''){
       alert("Preencha os Campos!")
-      // console.log(this.conta)
     } else {
 
 
       this.service.efetivarCompra(this.conta)
           .subscribe((num: number) => {
             this.conta.id = num
-            // console.log(num)
           })
 
           setTimeout(() => 
           {
-              //this.router.navigate(['/']);
               this.modalController.dismiss();
               window.location.reload();
               //alert("conta criada com sucesso!")
           },
           500);
-
-          //console.log(this.conta)
-
-        
         }
     }
 
